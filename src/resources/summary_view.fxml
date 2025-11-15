@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="frontend.controllers.SummaryController"
+            prefWidth="1100" prefHeight="700"
+            style="-fx-background-color: #121212;">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox spacing="12" alignment="CENTER_LEFT"
+              style="-fx-background-color: #1a1a1a; -fx-padding: 12;">
+            <ImageView fitHeight="36" fitWidth="36"
+                       preserveRatio="true"
+                       image="@assets/StudyNotesAILogo.png"/>
+            <Label text="StudyNotesAI"
+                   style="-fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- Main Layout: Left (upload), Right (summary) -->
+    <center>
+        <SplitPane dividerPositions="0.3">
+            <!-- LEFT PANEL -->
+            <VBox spacing="20" style="-fx-background-color: #1e1e1e; -fx-padding: 20;">
+                <Button fx:id="uploadBtn"
+                        text="📄 Upload PDF"
+                        onAction="#onClickUpload"
+                        style="-fx-font-size: 16px;
+                               -fx-text-fill: white;
+                               -fx-background-color: #4ea4ff;
+                               -fx-background-radius: 8;
+                               -fx-padding: 10;
+                               -fx-cursor: hand;"
+                />
+
+                <Label text="Selected File:"
+                       style="-fx-text-fill: #BBBBBB; -fx-font-size: 13;"/>
+
+                <Label fx:id="fileNameLabel"
+                       text="None"
+                       wrapText="true"
+                       style="-fx-text-fill: white; -fx-font-size: 14;"/>
+            </VBox>
+
+            <!-- RIGHT PANEL -->
+            <VBox spacing="10" style="-fx-padding: 20;">
+                <Label text="Summary"
+                       style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                <TextArea fx:id="textArea"
+                          wrapText="true"
+                          editable="false"
+                          style="-fx-control-inner-background: #1e1e1e;
+                                 -fx-text-fill: white;
+                                 -fx-font-size: 15px;"/>
+            </VBox>
+        </SplitPane>
+    </center>
+
+</BorderPane>

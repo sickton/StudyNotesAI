@@ -1,0 +1,14 @@
+.button:hover {
+    -fx-background-color: #6bb7ff;
+    -fx-scale-x: 1.04;
+    -fx-scale-y: 1.04;
+}
+
+/* Scrollbar styling */
+.text-area .scroll-bar:vertical {
+    -fx-background-color: #222;
+}
+.text-area .thumb {
+    -fx-background-color: #4ea4ff;
+    -fx-background-radius: 5;
+}
